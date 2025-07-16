@@ -1,5 +1,8 @@
 # app.R for Generic CRO Lab Shiny App (Corrected Version)
 
+# Set the maximum upload size to 20 MB (20 * 1024 * 1024 bytes)
+options(shiny.maxRequestSize = 20 * 1024^2) 
+
 # --- 1. Load Required Packages ---
 # List of required packages
 #packages <- c("shiny", "tidyr", "DT", "ggplot2", "dplyr", "purrr", "scales")
