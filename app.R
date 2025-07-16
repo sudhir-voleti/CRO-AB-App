@@ -376,10 +376,27 @@ server <- function(input, output, session) {
     }
   )
   
-  output$download_sample <- downloadHandler(
-    filename = function() "boxbliss_demo.csv",
-    content = function(destfile) { file.copy("data/boxbliss_demo.csv", destfile) }
-  )
+# Handler for the BoxBliss demo data
+output$download_sample_boxbliss <- downloadHandler(
+  filename = function() {
+    "boxbliss_demo.csv"
+  },
+  content = function(destfile) {
+    # Assumes the file is in a 'data' subdirectory of your app's main directory
+    file.copy("data/boxbliss_demo.csv", destfile)
+  }
+)
+
+# Handler for the InnovateEcho demo data
+output$download_sample_innovate <- downloadHandler(
+  filename = function() {
+    "innovateEcho_clickstream_data.csv"
+  },
+  content = function(destfile) {
+    # Assumes the file is in a 'data' subdirectory of your app's main directory
+    file.copy("data/innovateEcho_clickstream_data.csv", destfile)
+  }
+)
   
   # Reset inputs
   observeEvent(input$reset, {
