@@ -74,7 +74,11 @@ ui <- fluidPage(
                             </ul>
                           "),
                           tags$p(
-                            downloadButton("download_sample", "Download BoxBliss Demo CSV"),
+                            # located inside the tabPanel("Overview", ...)
+                          tagList(
+                            downloadButton("download_sample_boxbliss", "Download BoxBliss Demo"),
+                            downloadButton("download_sample_innovate", "Download InnovateEcho Demo")
+                          ),
                             style = "margin-top:1em;"
                           ),
                           helpText("Start by uploading your CSV on the left—then follow the tabs to run and refine your CRO experiments.")
