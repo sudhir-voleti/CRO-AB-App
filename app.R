@@ -80,7 +80,7 @@ ui <- fluidPage(
                             # located inside the tabPanel("Overview", ...)
                           tagList(
                             downloadButton("download_sample_boxbliss", "Download BoxBliss Demo"),
-                            downloadButton("download_sample_innovate", "Download InnovateEcho Demo")
+                            downloadButton("download_sample_fittrack", "Download FitTrack Demo")
                           ),
                             style = "margin-top:1em;"
                           ),
@@ -390,14 +390,14 @@ output$download_sample_boxbliss <- downloadHandler(
   }
 )
 
-# Handler for the InnovateEcho demo data
-output$download_sample_innovate <- downloadHandler(
+# Handler for the fittrack demo data
+output$download_sample_fittrack <- downloadHandler(
   filename = function() {
-    "innovateEcho_clickstream_data.csv"
+    "fittrack_demo_revised_v2.csv"
   },
   content = function(destfile) {
     # Assumes the file is in a 'data' subdirectory of your app's main directory
-    file.copy("data/innovateEcho_clickstream_data.csv", destfile)
+    file.copy("data/fittrack_demo_revised_v2.csv", destfile)
   }
 )
   
